@@ -1,0 +1,30 @@
+function addPart(){
+
+let name = Object.keys(sprites)[0];
+
+let data = sprites[name];
+
+let rect = new PIXI.Rectangle(
+data.x,
+data.y,
+data.w,
+data.h
+);
+
+let texture = new PIXI.Texture(baseTexture.baseTexture,rect);
+
+let sprite = new PIXI.Sprite(texture);
+
+sprite.anchor.set(0.5);
+
+sprite.x = 400;
+sprite.y = 300;
+
+sprite.interactive=true;
+sprite.buttonMode=true;
+
+app.stage.addChild(sprite);
+
+parts.push(sprite);
+
+}
